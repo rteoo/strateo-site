@@ -3,231 +3,297 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Strateo | Estratégia, inteligência e processo</title>
+    <title>Strateo | Estratégia, dados e inteligência</title>
     <meta
       name="description"
-      content="A Strateo estrutura sistemas de decisão e execução para transformar estratégia em rotina, dados em clareza e processos em resultado."
+      content="A Strateo transforma diagnóstico em rotinas, indicadores, controles e automações que funcionam no dia a dia."
     >
-    <meta name="theme-color" content="#F7F5F0">
-    <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
-    <link rel="preload" href="assets/strateo-wordmark-logo-v1.svg?v=2" as="image" type="image/svg+xml">
+    <meta name="theme-color" content="#F5F2E9">
+    <link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml">
+    <link rel="preload" href="assets/strateo-wordmark-no-border.png?v=3" as="image" type="image/png">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand-link" href="#top" aria-label="Strateo">
-        <img src="assets/strateo-wordmark-logo-v1.svg?v=2" alt="Strateo" width="1110" height="270">
+    <header class="site-header" data-scrolled="false">
+      <a class="brand-link" href="#topo" aria-label="Strateo">
+        <img src="assets/strateo-wordmark-no-border.png?v=3" alt="Strateo" width="779" height="172">
       </a>
 
       <nav class="site-nav" aria-label="Navegação principal">
-        <a href="#frentes">Frentes</a>
         <a href="#metodo">Método</a>
-        <a href="#entregas">Entregas</a>
+        <a href="#para-quem">Para quem</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#fundador">Fundador</a>
       </nav>
 
-      <a class="header-action" href="mailto:contato@strateo.com.br">Falar com a Strateo</a>
+      <a class="header-action" href="#contato">Agendar conversa</a>
     </header>
 
-    <main id="top">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <h1 id="hero-title">Estratégia, inteligência e processo para transformar operação em resultado.</h1>
-          <p class="hero-lede">
-            A Strateo cria sistemas práticos de execução: indicadores, rotinas, automações e fluxos de decisão para empresas que precisam operar com mais clareza, controle e velocidade.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="mailto:contato@strateo.com.br">Falar com a Strateo</a>
-            <p>Decisão clara. Processo visível. Resultado acompanhado.</p>
-          </div>
-        </div>
-
-        <div class="system-panel reveal" aria-label="Visual abstrato de processos, indicadores e fluxos de decisão">
-          <div class="panel-topline">
-            <span>Sistema de execução</span>
-            <span>rotina / decisão / evidência</span>
-          </div>
-          <svg class="process-map" viewBox="0 0 680 560" role="img" aria-label="Mapa abstrato de fluxo operacional">
-            <defs>
-              <linearGradient id="signal" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#0E4F5A"/>
-                <stop offset="1" stop-color="#2C8A99"/>
-              </linearGradient>
-            </defs>
-
-            <rect class="map-frame" x="28" y="28" width="624" height="504" rx="8"/>
-            <path class="grid-line" d="M88 92H592M88 166H592M88 240H592M88 314H592M88 388H592M88 462H592"/>
-            <path class="grid-line" d="M160 76V486M300 76V486M440 76V486"/>
-
-            <path class="flow-path path-a" d="M102 128H228C272 128 272 218 316 218H486C526 218 526 318 566 318"/>
-            <path class="flow-path path-b" d="M102 352H210C258 352 258 278 306 278H420C468 278 468 424 516 424H580"/>
-            <path class="flow-path path-c" d="M160 462V404C160 374 190 374 190 344V222C190 190 222 190 222 158"/>
-
-            <g class="node node-large">
-              <rect x="82" y="96" width="144" height="64" rx="6"/>
-              <path d="M110 122H188M110 140H158"/>
+    <main id="topo">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-motif" aria-hidden="true">
+          <svg viewBox="0 0 560 460" fill="none" preserveAspectRatio="xMidYMid meet">
+            <g stroke="var(--line-motif)" stroke-width="1.25">
+              <line x1="20" y1="80" x2="220" y2="80"/>
+              <line x1="20" y1="200" x2="160" y2="200"/>
+              <line x1="20" y1="330" x2="200" y2="330"/>
+              <path d="M220 80 L220 200 L360 200"/>
+              <path d="M160 200 L280 200"/>
+              <path d="M200 330 L300 330 L300 200"/>
+              <path d="M360 200 L360 80 L520 80"/>
+              <path d="M360 200 L540 200"/>
+              <path d="M300 330 L440 330 L440 200"/>
+              <path d="M440 330 L540 330"/>
+              <line x1="420" y1="40" x2="420" y2="380"/>
             </g>
-            <g class="node">
-              <rect x="270" y="186" width="136" height="64" rx="6"/>
-              <path d="M298 212H364M298 230H342"/>
+            <g fill="var(--node-motif)">
+              <rect x="208" y="71" width="40" height="16" rx="2"/>
+              <rect x="148" y="191" width="40" height="16" rx="2"/>
+              <rect x="188" y="321" width="40" height="16" rx="2"/>
+              <rect x="500" y="72" width="40" height="16" rx="2"/>
+              <rect x="520" y="191" width="40" height="16" rx="2"/>
+              <rect x="520" y="321" width="40" height="16" rx="2"/>
             </g>
-            <g class="node">
-              <rect x="486" y="286" width="112" height="64" rx="6"/>
-              <path d="M514 312H568M514 330H550"/>
-            </g>
-            <g class="node">
-              <rect x="82" y="320" width="136" height="64" rx="6"/>
-              <path d="M110 346H176M110 364H150"/>
-            </g>
-            <g class="node">
-              <rect x="294" y="246" width="130" height="64" rx="6"/>
-              <path d="M322 272H386M322 290H370"/>
-            </g>
-            <g class="node node-small">
-              <rect x="502" y="392" width="104" height="64" rx="6"/>
-              <path d="M530 418H578M530 436H560"/>
-            </g>
-
-            <g class="checkpoint">
-              <circle cx="102" cy="128" r="7"/>
-              <circle cx="316" cy="218" r="7"/>
-              <circle cx="566" cy="318" r="7"/>
-              <circle cx="102" cy="352" r="7"/>
-              <circle cx="306" cy="278" r="7"/>
-              <circle cx="580" cy="424" r="7"/>
+            <g fill="var(--petroleum-600)">
+              <rect x="345" y="191" width="42" height="17" rx="2"/>
             </g>
           </svg>
-          <div class="panel-metrics" aria-hidden="true">
-            <div>
-              <span>Controle</span>
-              <strong>92%</strong>
-            </div>
-            <div>
-              <span>Cadência</span>
-              <strong>5 rotinas</strong>
-            </div>
-            <div>
-              <span>Evidência</span>
-              <strong>ao vivo</strong>
-            </div>
+        </div>
+
+        <div class="section-shell hero-inner reveal">
+          <p class="eyebrow">Sistemas de execução</p>
+          <h1 id="hero-title">
+            Estratégia <span>+</span> inteligência <span>+</span> processo <span>=</span> resultado.
+          </h1>
+          <p class="hero-sub">
+            A Strateo transforma diagnóstico em rotinas, indicadores, controles e automações que funcionam no dia a dia. Execução mais clara, mais rápida e mais controlada.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:contato@strateo.com.br">
+              Agendar conversa
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h10.5M10.5 5.5 15 10l-4.5 4.5"/>
+              </svg>
+            </a>
+            <a class="button button-secondary" href="#metodo">Ver o método</a>
           </div>
         </div>
       </section>
 
-      <section class="problem-band" aria-labelledby="problem-title">
-        <div class="section-shell problem-layout reveal">
-          <p>Estratégia não vira rotina. Dados ficam espalhados. Processos dependem de memória, planilha e cobrança manual.</p>
-          <h2 id="problem-title">O custo aparece em follow-up perdido, decisão lenta e execução inconsistente.</h2>
+      <section class="proof-strip" aria-label="Contexto de atuação">
+        <div class="section-shell proof-inner">
+          <span>Contexto de atuação</span>
+          <ul>
+            <li>BTG Pactual / Necton</li>
+            <li>Mercado regulado · CVM · ANBIMA</li>
+            <li>Necton Labs</li>
+            <li>BTG Academia</li>
+            <li>Operação de gestora</li>
+          </ul>
         </div>
       </section>
 
-      <section id="frentes" class="fronts-section" aria-labelledby="fronts-title">
-        <div class="section-shell fronts-layout">
-          <div class="section-heading reveal">
-            <span>Frentes</span>
-            <h2 id="fronts-title">Quatro camadas para transformar intenção em operação acompanhada.</h2>
-          </div>
-
-          <div class="fronts-grid">
-            <article class="front-card reveal">
-              <span>01</span>
-              <h3>Estratégia de execução</h3>
-              <p>Prioridades, cadência e clareza sobre o que precisa acontecer primeiro.</p>
-            </article>
-            <article class="front-card reveal">
-              <span>02</span>
-              <h3>Inteligência de negócio</h3>
-              <p>Dados estruturados para leitura, decisão e acompanhamento recorrente.</p>
-            </article>
-            <article class="front-card reveal">
-              <span>03</span>
-              <h3>Controle de processos</h3>
-              <p>Checkpoints, responsabilidades e padrões de evidência para a rotina não escapar.</p>
-            </article>
-            <article class="front-card reveal">
-              <span>04</span>
-              <h3>Automação operacional</h3>
-              <p>Fluxos que removem trabalho manual e tornam a execução mais rápida e verificável.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="metodo" class="section-shell method-section" aria-labelledby="method-title">
-        <div class="section-heading method-heading reveal">
-          <span>Método</span>
+      <section class="thesis-section">
+        <div class="section-shell thesis-grid reveal">
+          <p class="eyebrow">Tese central</p>
           <div>
-            <h2 id="method-title">Como a Strateo tira o processo do papel.</h2>
-            <p>Um ciclo simples para entender a rotina, organizar a execução e manter o controle vivo.</p>
+            <h2>Planejamento que não vira rotina é só intenção bem diagramada.</h2>
+            <p>
+              O trabalho da Strateo é fechar a distância entre a decisão e a operação: organizar prioridade, cadência, evidência e automação para que a execução avance com controle.
+            </p>
           </div>
         </div>
-
-        <ol class="method-cards">
-          <li class="method-card reveal">
-            <span>01</span>
-            <strong>Entender</strong>
-            <p>Mapear como a rotina funciona hoje, onde a informação fica presa e quais pontos precisam de controle.</p>
-          </li>
-          <li class="method-card reveal">
-            <span>02</span>
-            <strong>Organizar</strong>
-            <p>Definir indicadores, responsáveis, checklists e fluxos para a equipe executar com clareza.</p>
-          </li>
-          <li class="method-card reveal">
-            <span>03</span>
-            <strong>Acompanhar</strong>
-            <p>Medir o que está acontecendo, ajustar a cadência e automatizar o que ainda consome tempo.</p>
-          </li>
-        </ol>
       </section>
 
-      <section id="entregas" class="delivery-section" aria-labelledby="delivery-title">
+      <section id="metodo" class="section method-section" aria-labelledby="method-title">
         <div class="section-shell">
-          <div class="section-heading delivery-heading reveal">
-            <span>Entregas</span>
-            <div>
-              <h2 id="delivery-title">O que a Strateo coloca para rodar.</h2>
-              <p>Menos peças soltas. Mais rotina clara, controle simples e execução acompanhada.</p>
-            </div>
+          <div class="section-heading reveal">
+            <p class="eyebrow">O método Strateo</p>
+            <h2 id="method-title">Estratégia que vira sistema, em quatro movimentos.</h2>
+            <p>Primeiro o processo. Depois a automação. Sempre com rotina, indicador e responsabilidade claros.</p>
           </div>
 
-          <div class="delivery-cards">
-            <article class="delivery-card reveal">
-              <span>01</span>
-              <h3>Comercial em dia</h3>
-              <p>Oportunidades, próximos passos e follow-up organizados para a venda não depender de memória.</p>
+          <div class="method-grid">
+            <article class="method-card reveal">
+              <div class="card-topline">
+                <span>01</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 6h14M5 12h10M5 18h7"/>
+                </svg>
+              </div>
+              <h3>Diagnóstico de campo</h3>
+              <p>Mapeamos como a empresa vende, decide, controla e perde velocidade na operação real.</p>
             </article>
-            <article class="delivery-card reveal">
-              <span>02</span>
-              <h3>Operação organizada</h3>
-              <p>Processos, checklists e responsáveis claros para a equipe saber o que fazer no dia a dia.</p>
+
+            <article class="method-card reveal">
+              <div class="card-topline">
+                <span>02</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 7h10M7 12h10M7 17h6"/>
+                  <path d="M4 7h.01M4 12h.01M4 17h.01"/>
+                </svg>
+              </div>
+              <h3>Rotinas e cadência</h3>
+              <p>Transformamos intenção em listas, responsáveis, checkpoints e ritmo comercial ou operacional.</p>
             </article>
-            <article class="delivery-card reveal">
-              <span>03</span>
-              <h3>Controle visível</h3>
-              <p>Painéis, registros e automações simples para enxergar o que saiu, o que falta e onde agir.</p>
+
+            <article class="method-card reveal">
+              <div class="card-topline">
+                <span>03</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 19V5"/>
+                  <path d="M4 19h16"/>
+                  <path d="M8 16v-5M12 16V8M16 16v-7"/>
+                </svg>
+              </div>
+              <h3>Indicadores e controle</h3>
+              <p>Definimos leituras úteis e controles que tornam a decisão rápida e a evidência rastreável.</p>
+            </article>
+
+            <article class="method-card reveal">
+              <div class="card-topline">
+                <span>04</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 8h5a3 3 0 0 1 3 3v2a3 3 0 0 0 3 3h1"/>
+                  <path d="M6 16h4"/>
+                  <path d="M18 6v4M16 8h4"/>
+                  <path d="M18 14v4M16 16h4"/>
+                </svg>
+              </div>
+              <h3>Automação com IA</h3>
+              <p>Automatizamos o que reduz fricção depois que o fluxo já está claro e governável.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="contact-section" aria-labelledby="contact-title">
-        <div class="section-shell contact-layout reveal">
-          <div>
-            <span class="section-label">Contato</span>
-            <h2 id="contact-title">Fale com a Strateo.</h2>
-            <p>Para estruturar sistemas de execução, indicadores, rotinas e automações com foco em resultado operacional.</p>
+      <section id="para-quem" class="section audience-section" aria-labelledby="audience-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Para quem</p>
+            <h2 id="audience-title">Feito para ambientes de alta confiança.</h2>
           </div>
-          <address>
-            <a class="button button-primary" href="mailto:contato@strateo.com.br">Falar com a Strateo</a>
-            <span>Av. Portugal, 1148, Sala C2501, Setor Marista, Goiânia-GO, CEP 74150-030</span>
+
+          <div class="audience-grid">
+            <article class="audience-card reveal">
+              <h3>Escritórios de investimento</h3>
+              <p>Cadência comercial, captação estruturada, indicações e rotinas de relacionamento na rede B2B.</p>
+              <span>Necton B2B</span>
+            </article>
+            <article class="audience-card reveal">
+              <h3>Mercado regulado</h3>
+              <p>Controles, evidência e rotina para gestoras, asset e wealth, onde documentação importa.</p>
+              <span>CVM · ANBIMA</span>
+            </article>
+            <article class="audience-card reveal">
+              <h3>Indústria, agro e construção</h3>
+              <p>Processos de decisão, gestão e operação para negócios que cresceram mais rápido que seus controles.</p>
+              <span>Operação real</span>
+            </article>
+            <article class="audience-card reveal">
+              <h3>Negócios familiares</h3>
+              <p>Sistemas de venda e gestão sem precisar montar uma estrutura grande de operações.</p>
+              <span>Founder-led</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultados" class="results-section" aria-labelledby="results-title">
+        <div class="section-shell results-grid reveal">
+          <div>
+            <p class="eyebrow eyebrow-inverse">Tese de execução</p>
+            <blockquote id="results-title">
+              Venda não é improviso nem motivação. É processo: rotina, técnica, cadência, indicadores, aprendizado e melhoria contínua.
+            </blockquote>
+            <p class="results-cite">Princípio de trabalho da Strateo</p>
+          </div>
+
+          <div class="principles-list" aria-label="Princípios de operação">
+            <article>
+              <span>01</span>
+              <strong>Rotina antes de cobrança</strong>
+              <p>A equipe sabe o que fazer, quando fazer e como registrar a evidência.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Indicador antes de opinião</strong>
+              <p>A conversa de gestão parte de fatos observáveis, não de sensação.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Processo antes de automação</strong>
+              <p>Automatizar bagunça só faz a bagunça andar mais rápido.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="fundador" class="section founder-section" aria-labelledby="founder-title">
+        <div class="section-shell founder-grid">
+          <div class="founder-mark reveal" aria-hidden="true">
+            <span>RT</span>
+          </div>
+
+          <div class="founder-copy reveal">
+            <p class="eyebrow">Fundador</p>
+            <h2 id="founder-title">Rodrigo Teodoro</h2>
+            <p>
+              A visão de processos vem de operação real: mercado financeiro, engenharia, construção, gestão e negócios próprios. A atuação próxima de escritórios e operadores mostra onde a estratégia costuma travar na rotina.
+            </p>
+            <ul class="credential-list">
+              <li>Ecossistema BTG Pactual / Necton</li>
+              <li>Gestor de carteiras CVM</li>
+              <li>ANBIMA · CEA · CGA · CGE</li>
+              <li>Implantação de gestora</li>
+              <li>Docência em engenharia</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section contact-section" aria-labelledby="contact-title">
+        <div class="section-shell contact-grid reveal">
+          <div>
+            <p class="eyebrow">Próximo passo</p>
+            <h2 id="contact-title">Vamos transformar processo em resultado.</h2>
+            <p>
+              Conte o desafio operacional. A Strateo responde com um diagnóstico inicial e um caminho claro para organizar rotina, indicador, controle e automação.
+            </p>
+          </div>
+
+          <address class="contact-card">
+            <a class="button button-primary" href="mailto:contato@strateo.com.br">
+              contato@strateo.com.br
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h10.5M10.5 5.5 15 10l-4.5 4.5"/>
+              </svg>
+            </a>
+            <span>Av. Portugal, 1148, Sala C2501</span>
+            <span>Setor Marista, Goiânia-GO, CEP 74150-030</span>
           </address>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <img src="assets/strateo-wordmark-logo-v1.svg?v=2" alt="Strateo" width="1110" height="270">
-      <span>Estratégia, inteligência e processo.</span>
+      <div class="footer-inner">
+        <div>
+          <img src="assets/strateo-wordmark-no-border.png?v=3" alt="Strateo" width="779" height="172">
+          <p>Estratégia, dados e inteligência para transformar processos em resultado.</p>
+        </div>
+        <nav aria-label="Navegação do rodapé">
+          <a href="#metodo">Método</a>
+          <a href="#para-quem">Para quem</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#fundador">Fundador</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <span>© 2026 Strateo Serviços Empresariais Ltda.</span>
+        <span>Strategy + intelligence + process = result.</span>
+      </div>
     </footer>
 
     <script src="script.js"></script>
