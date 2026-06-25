@@ -351,7 +351,6 @@ blockquote {
 .hero h1,
 .section-heading h2,
 .thesis-grid h2,
-.founder-copy h2,
 .contact-grid h2 {
   color: var(--text-strong);
   font-family: var(--font-display);
@@ -390,20 +389,6 @@ blockquote {
   margin-top: var(--space-10);
 }
 
-.proof-strip {
-  background: var(--bg-sunken);
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.proof-inner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  padding-top: 22px;
-  padding-bottom: 22px;
-}
-
-.proof-inner > span,
 .card-topline span,
 .principles-list span {
   color: var(--text-subtle);
@@ -412,21 +397,6 @@ blockquote {
   font-weight: 600;
   letter-spacing: 0;
   text-transform: uppercase;
-}
-
-.proof-inner ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-6);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.proof-inner li {
-  color: var(--graphite-600);
-  font-size: var(--text-sm);
-  font-weight: 700;
 }
 
 .thesis-section {
@@ -473,7 +443,6 @@ blockquote {
 }
 
 .section-heading h2,
-.founder-copy h2,
 .contact-grid h2 {
   margin-top: var(--space-4);
   font-size: var(--text-4xl);
@@ -481,8 +450,7 @@ blockquote {
 }
 
 .section-heading > p:not(.eyebrow),
-.contact-grid > div > p,
-.founder-copy > p {
+.contact-grid > div > p {
   max-width: var(--measure);
   margin-top: var(--space-5);
   color: var(--text-muted);
@@ -545,6 +513,10 @@ blockquote {
   line-height: 1.55;
 }
 
+.audience-card p {
+  margin-bottom: var(--space-6);
+}
+
 .audience-section {
   background: var(--cream-50);
   border-top: 1px solid var(--border-hairline);
@@ -558,16 +530,17 @@ blockquote {
 }
 
 .audience-card {
+  display: flex;
+  flex-direction: column;
   min-height: 264px;
 }
 
-.audience-card span,
-.credential-list li {
+.audience-card span {
   display: inline-flex;
   width: fit-content;
   align-items: center;
   min-height: 28px;
-  margin-top: var(--space-6);
+  margin-top: auto;
   padding: 0 10px;
   color: var(--petroleum-700);
   font-family: var(--font-mono);
@@ -639,66 +612,6 @@ blockquote {
 
 .principles-list p {
   color: var(--petroleum-100);
-}
-
-.founder-section {
-  background: var(--cream-50);
-}
-
-.founder-grid {
-  display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
-  gap: var(--space-16);
-  align-items: center;
-}
-
-.founder-mark {
-  position: relative;
-  display: flex;
-  aspect-ratio: 4 / 5;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--gradient-ink);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-}
-
-.founder-mark::before {
-  position: absolute;
-  inset: 34px;
-  content: "";
-  border: 1px solid rgba(166, 195, 202, 0.22);
-}
-
-.founder-mark span {
-  position: relative;
-  color: var(--petroleum-200);
-  font-family: var(--font-mono);
-  font-size: 96px;
-  font-weight: 500;
-  line-height: 1;
-  opacity: 0.58;
-}
-
-.founder-copy {
-  max-width: 780px;
-}
-
-.credential-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: var(--space-8) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.credential-list li {
-  margin-top: 0;
-  color: var(--petroleum-700);
-  background: transparent;
 }
 
 .contact-section {
@@ -849,7 +762,6 @@ blockquote {
 
   .thesis-grid,
   .results-grid,
-  .founder-grid,
   .contact-grid {
     grid-template-columns: 1fr;
     gap: var(--space-10);
@@ -858,10 +770,6 @@ blockquote {
   .method-grid,
   .audience-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .founder-mark {
-    max-width: 320px;
   }
 
   .principles-list {
@@ -922,7 +830,6 @@ blockquote {
   }
 
   .hero-actions,
-  .proof-inner,
   .footer-legal {
     align-items: stretch;
     flex-direction: column;
@@ -933,15 +840,6 @@ blockquote {
     width: 100%;
   }
 
-  .proof-inner {
-    display: grid;
-    gap: var(--space-4);
-  }
-
-  .proof-inner ul {
-    gap: var(--space-3) var(--space-5);
-  }
-
   .thesis-grid {
     padding-top: 60px;
     padding-bottom: 64px;
@@ -949,7 +847,6 @@ blockquote {
 
   .thesis-grid h2,
   .section-heading h2,
-  .founder-copy h2,
   .contact-grid h2 {
     font-size: var(--text-3xl);
   }
@@ -968,10 +865,6 @@ blockquote {
 
   .results-grid blockquote {
     font-size: var(--text-2xl);
-  }
-
-  .founder-mark {
-    max-width: 260px;
   }
 
   .contact-card {
