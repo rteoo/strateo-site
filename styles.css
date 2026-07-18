@@ -7,6 +7,7 @@
   --petroleum-700: #0e4250;
   --petroleum-600: #104a58;
   --petroleum-500: #1a6071;
+  --petroleum-400: #3f8190;
   --petroleum-300: #6fa0ab;
   --petroleum-200: #a6c3ca;
   --petroleum-100: #cfdee2;
@@ -34,7 +35,18 @@
   --sage-100: #eaefec;
 
   --white: #ffffff;
+
+  --success-600: #2f6b4f;
   --success-500: #3f7d5c;
+  --success-100: #dce9e1;
+  --warning-600: #9a6b1e;
+  --warning-500: #b5832e;
+  --warning-100: #f0e4cc;
+  --danger-600: #8e3a33;
+  --danger-500: #a8453b;
+  --danger-100: #f0dad6;
+  --info-600: var(--petroleum-600);
+  --info-100: var(--petroleum-50);
 
   --brand: var(--petroleum-600);
   --brand-strong: var(--petroleum-700);
@@ -43,15 +55,20 @@
   --bg-page-bright: var(--cream-50);
   --bg-sunken: var(--cream-200);
   --surface-card: var(--white);
+  --surface-raised: var(--white);
   --surface-inverse: var(--petroleum-900);
+  --surface-brand: var(--petroleum-600);
   --text-strong: var(--graphite-900);
   --text-body: var(--graphite-700);
   --text-muted: var(--graphite-500);
   --text-subtle: var(--graphite-400);
+  --text-on-brand: var(--cream-50);
   --text-on-inverse: var(--cream-100);
   --text-brand: var(--petroleum-600);
   --border-hairline: var(--cream-300);
   --border-default: var(--cream-400);
+  --border-strong: var(--graphite-300);
+  --border-brand: var(--petroleum-600);
   --border-focus: var(--petroleum-500);
   --line-motif: var(--sage-400);
   --node-motif: var(--sage-300);
@@ -72,7 +89,37 @@
   --text-4xl: 48px;
   --text-5xl: 60px;
   --text-6xl: 76px;
+  --text-7xl: 96px;
 
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extra: 800;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.22;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --ls-tight: -0.02em;
+  --ls-snug: -0.01em;
+  --ls-normal: 0;
+  --ls-wide: 0.02em;
+  --ls-caps: 0.14em;
+  --ls-mono: 0.01em;
+
+  --role-hero-font: var(--font-display);
+  --role-hero-weight: var(--fw-semibold);
+  --role-h-font: var(--font-display);
+  --role-h-weight: var(--fw-semibold);
+  --role-eyebrow-font: var(--font-mono);
+  --role-body-font: var(--font-sans);
+  --role-data-font: var(--font-mono);
+
+  --space-0: 0;
+  --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
@@ -84,28 +131,47 @@
   --space-16: 64px;
   --space-20: 80px;
   --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
 
+  --radius-none: 0;
+  --radius-xs: 3px;
+  --radius-sm: 5px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-2xl: 24px;
   --radius-pill: 999px;
+
+  --border-w-hair: 1px;
+  --border-w-base: 1.5px;
+  --border-w-emph: 2px;
 
   --shadow-xs: 0 1px 2px rgba(8, 42, 51, 0.06);
   --shadow-sm: 0 1px 3px rgba(8, 42, 51, 0.07), 0 1px 2px rgba(8, 42, 51, 0.05);
   --shadow-md: 0 4px 14px rgba(8, 42, 51, 0.08), 0 1px 3px rgba(8, 42, 51, 0.05);
   --shadow-lg: 0 12px 32px rgba(8, 42, 51, 0.1), 0 4px 8px rgba(8, 42, 51, 0.05);
+  --shadow-xl: 0 24px 60px rgba(8, 42, 51, 0.14), 0 8px 16px rgba(8, 42, 51, 0.06);
+  --shadow-inset: inset 0 1px 2px rgba(8, 42, 51, 0.06);
   --ring-brand: 0 0 0 3px rgba(26, 96, 113, 0.28);
+  --ring-danger: 0 0 0 3px rgba(168, 69, 59, 0.26);
   --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-entrance: cubic-bezier(0.16, 0.84, 0.44, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
   --dur-fast: 120ms;
   --dur-base: 200ms;
   --dur-slow: 320ms;
   --gradient-paper: linear-gradient(105deg, var(--cream-50) 0%, var(--cream-100) 48%, var(--sage-200) 100%);
   --gradient-ink: linear-gradient(160deg, var(--petroleum-900) 0%, var(--petroleum-950) 100%);
 
+  --container-sm: 640px;
+  --container-md: 860px;
+  --container-lg: 1080px;
   --container-xl: 1280px;
+  --container-2xl: 1440px;
   --measure: 66ch;
   --section-y: 96px;
-  --gutter: 40px;
+  --gutter: 40px; /* site-local: design-system token is 24px, but the website kit's effective gutter is 40px */
 }
 
 *,
@@ -188,7 +254,7 @@ blockquote {
   top: 0;
   z-index: 30;
   display: grid;
-  grid-template-columns: 148px 1fr auto;
+  grid-template-columns: auto 1fr auto;
   gap: var(--space-8);
   align-items: center;
   padding: 16px max(24px, calc((100% - var(--container-xl)) / 2));
@@ -210,12 +276,11 @@ blockquote {
 .brand-link {
   display: inline-flex;
   align-items: center;
-  width: 124px;
 }
 
 .brand-link img {
-  width: 124px;
-  height: auto;
+  width: auto;
+  height: 26px;
 }
 
 .site-nav {
@@ -244,7 +309,7 @@ blockquote {
   gap: 10px;
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--fw-semibold);
   line-height: 1;
   transition:
     background var(--dur-base) var(--ease-standard),
@@ -278,7 +343,11 @@ blockquote {
 .header-action:hover,
 .button:hover {
   text-decoration: none;
-  transform: translateY(-1px);
+}
+
+.header-action:active,
+.button:active {
+  transform: translateY(1px);
 }
 
 .button-primary {
@@ -292,6 +361,11 @@ blockquote {
   border-color: var(--brand-strong);
 }
 
+.button-primary:active {
+  background: var(--petroleum-800);
+  border-color: var(--petroleum-800);
+}
+
 .button-secondary {
   color: var(--text-brand);
   background: rgba(255, 255, 255, 0.52);
@@ -301,6 +375,11 @@ blockquote {
 .button-secondary:hover,
 .header-action:hover {
   border-color: var(--brand);
+}
+
+.button-secondary:active,
+.header-action:active {
+  background: var(--petroleum-100);
 }
 
 .hero {
@@ -331,21 +410,22 @@ blockquote {
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 10px;
   color: var(--text-brand);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-caps);
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .eyebrow::before {
-  width: 28px;
-  height: 1px;
+  width: 18px;
+  height: 1.5px;
   content: "";
   background: currentColor;
+  opacity: 0.7;
 }
 
 .hero h1,
@@ -355,7 +435,7 @@ blockquote {
   color: var(--text-strong);
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-tight);
   text-wrap: balance;
 }
 
@@ -395,8 +475,13 @@ blockquote {
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.card-topline span {
+  color: var(--petroleum-500);
+  font-size: 13px;
 }
 
 .thesis-section {
@@ -450,7 +535,7 @@ blockquote {
 }
 
 .section-heading > p:not(.eyebrow),
-.contact-grid > div > p {
+.contact-lead {
   max-width: var(--measure);
   margin-top: var(--space-5);
   color: var(--text-muted);
@@ -500,7 +585,7 @@ blockquote {
   font-family: var(--font-display);
   font-size: 21px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-snug);
   line-height: 1.18;
 }
 
@@ -530,25 +615,38 @@ blockquote {
 }
 
 .audience-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 264px;
+}
+
+.audience-card::before {
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  width: 36px;
+  height: 2px;
+  content: "";
+  background: var(--petroleum-600);
+  border-radius: 2px;
 }
 
 .audience-card span {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  min-height: 28px;
   margin-top: auto;
-  padding: 0 10px;
+  padding: 5px 10px;
+  /* a11y hold: kit badge uses sage-600 text (~3.3:1 on sage-200); petroleum-700 keeps AA */
   color: var(--petroleum-700);
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  line-height: 1;
-  background: var(--sage-100);
-  border: 1px solid var(--sage-200);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background: var(--sage-200);
   border-radius: var(--radius-pill);
 }
 
@@ -574,7 +672,7 @@ blockquote {
   font-size: 34px;
   font-weight: 500;
   line-height: 1.32;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-tight);
   text-wrap: balance;
 }
 
@@ -584,7 +682,7 @@ blockquote {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -621,17 +719,44 @@ blockquote {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 14px;
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text-body);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contact-list svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: var(--success-500);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .contact-card {
   display: grid;
   gap: var(--space-4);
   padding: var(--space-8);
-  color: var(--text-muted);
-  font-style: normal;
   background: var(--surface-card);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-xl);
@@ -641,6 +766,13 @@ blockquote {
 .contact-card .button {
   width: fit-content;
   margin-bottom: var(--space-2);
+}
+
+.contact-card address {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--text-muted);
+  font-style: normal;
 }
 
 .site-footer {
@@ -658,10 +790,8 @@ blockquote {
 }
 
 .footer-inner img {
-  width: 126px;
-  height: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.94;
+  width: auto;
+  height: 30px;
 }
 
 .footer-inner p {
@@ -684,6 +814,10 @@ blockquote {
 .footer-inner a {
   color: var(--petroleum-100);
   font-size: var(--text-sm);
+}
+
+.footer-inner a:hover {
+  color: var(--white);
 }
 
 .footer-legal {
@@ -743,13 +877,11 @@ blockquote {
   }
 
   .site-header {
-    grid-template-columns: 132px 1fr auto;
     gap: var(--space-5);
   }
 
-  .brand-link,
   .brand-link img {
-    width: 112px;
+    height: 24px;
   }
 
   .hero-motif {
@@ -798,9 +930,8 @@ blockquote {
     display: none;
   }
 
-  .brand-link,
   .brand-link img {
-    width: 108px;
+    height: 22px;
   }
 
   .header-action {
