@@ -7,6 +7,7 @@
   --petroleum-700: #0e4250;
   --petroleum-600: #104a58;
   --petroleum-500: #1a6071;
+  --petroleum-400: #3f8190;
   --petroleum-300: #6fa0ab;
   --petroleum-200: #a6c3ca;
   --petroleum-100: #cfdee2;
@@ -34,7 +35,18 @@
   --sage-100: #eaefec;
 
   --white: #ffffff;
+
+  --success-600: #2f6b4f;
   --success-500: #3f7d5c;
+  --success-100: #dce9e1;
+  --warning-600: #9a6b1e;
+  --warning-500: #b5832e;
+  --warning-100: #f0e4cc;
+  --danger-600: #8e3a33;
+  --danger-500: #a8453b;
+  --danger-100: #f0dad6;
+  --info-600: var(--petroleum-600);
+  --info-100: var(--petroleum-50);
 
   --brand: var(--petroleum-600);
   --brand-strong: var(--petroleum-700);
@@ -43,15 +55,20 @@
   --bg-page-bright: var(--cream-50);
   --bg-sunken: var(--cream-200);
   --surface-card: var(--white);
+  --surface-raised: var(--white);
   --surface-inverse: var(--petroleum-900);
+  --surface-brand: var(--petroleum-600);
   --text-strong: var(--graphite-900);
   --text-body: var(--graphite-700);
   --text-muted: var(--graphite-500);
   --text-subtle: var(--graphite-400);
+  --text-on-brand: var(--cream-50);
   --text-on-inverse: var(--cream-100);
   --text-brand: var(--petroleum-600);
   --border-hairline: var(--cream-300);
   --border-default: var(--cream-400);
+  --border-strong: var(--graphite-300);
+  --border-brand: var(--petroleum-600);
   --border-focus: var(--petroleum-500);
   --line-motif: var(--sage-400);
   --node-motif: var(--sage-300);
@@ -72,7 +89,37 @@
   --text-4xl: 48px;
   --text-5xl: 60px;
   --text-6xl: 76px;
+  --text-7xl: 96px;
 
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extra: 800;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.22;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --ls-tight: -0.02em;
+  --ls-snug: -0.01em;
+  --ls-normal: 0;
+  --ls-wide: 0.02em;
+  --ls-caps: 0.14em;
+  --ls-mono: 0.01em;
+
+  --role-hero-font: var(--font-display);
+  --role-hero-weight: var(--fw-semibold);
+  --role-h-font: var(--font-display);
+  --role-h-weight: var(--fw-semibold);
+  --role-eyebrow-font: var(--font-mono);
+  --role-body-font: var(--font-sans);
+  --role-data-font: var(--font-mono);
+
+  --space-0: 0;
+  --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
@@ -84,28 +131,47 @@
   --space-16: 64px;
   --space-20: 80px;
   --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
 
+  --radius-none: 0;
+  --radius-xs: 3px;
+  --radius-sm: 5px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-2xl: 24px;
   --radius-pill: 999px;
+
+  --border-w-hair: 1px;
+  --border-w-base: 1.5px;
+  --border-w-emph: 2px;
 
   --shadow-xs: 0 1px 2px rgba(8, 42, 51, 0.06);
   --shadow-sm: 0 1px 3px rgba(8, 42, 51, 0.07), 0 1px 2px rgba(8, 42, 51, 0.05);
   --shadow-md: 0 4px 14px rgba(8, 42, 51, 0.08), 0 1px 3px rgba(8, 42, 51, 0.05);
   --shadow-lg: 0 12px 32px rgba(8, 42, 51, 0.1), 0 4px 8px rgba(8, 42, 51, 0.05);
+  --shadow-xl: 0 24px 60px rgba(8, 42, 51, 0.14), 0 8px 16px rgba(8, 42, 51, 0.06);
+  --shadow-inset: inset 0 1px 2px rgba(8, 42, 51, 0.06);
   --ring-brand: 0 0 0 3px rgba(26, 96, 113, 0.28);
+  --ring-danger: 0 0 0 3px rgba(168, 69, 59, 0.26);
   --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-entrance: cubic-bezier(0.16, 0.84, 0.44, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
   --dur-fast: 120ms;
   --dur-base: 200ms;
   --dur-slow: 320ms;
   --gradient-paper: linear-gradient(105deg, var(--cream-50) 0%, var(--cream-100) 48%, var(--sage-200) 100%);
   --gradient-ink: linear-gradient(160deg, var(--petroleum-900) 0%, var(--petroleum-950) 100%);
 
+  --container-sm: 640px;
+  --container-md: 860px;
+  --container-lg: 1080px;
   --container-xl: 1280px;
+  --container-2xl: 1440px;
   --measure: 66ch;
   --section-y: 96px;
-  --gutter: 40px;
+  --gutter: 40px; /* site-local: design-system token is 24px, but the website kit's effective gutter is 40px */
 }
 
 *,
