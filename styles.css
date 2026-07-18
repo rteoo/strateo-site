@@ -535,7 +535,7 @@ blockquote {
 }
 
 .section-heading > p:not(.eyebrow),
-.contact-grid > div > p {
+.contact-lead {
   max-width: var(--measure);
   margin-top: var(--space-5);
   color: var(--text-muted);
@@ -719,17 +719,44 @@ blockquote {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 14px;
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text-body);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contact-list svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: var(--success-500);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .contact-card {
   display: grid;
   gap: var(--space-4);
   padding: var(--space-8);
-  color: var(--text-muted);
-  font-style: normal;
   background: var(--surface-card);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-xl);
@@ -739,6 +766,13 @@ blockquote {
 .contact-card .button {
   width: fit-content;
   margin-bottom: var(--space-2);
+}
+
+.contact-card address {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--text-muted);
+  font-style: normal;
 }
 
 .site-footer {
