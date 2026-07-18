@@ -8,6 +8,35 @@ const syncHeader = () => {
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
 
+const menuButton = document.querySelector(".menu-toggle");
+const nav = document.getElementById("navegacao-principal");
+
+if (header && menuButton && nav) {
+  const setMenu = open => {
+    header.dataset.menuOpen = String(open);
+    menuButton.setAttribute("aria-expanded", String(open));
+  };
+
+  menuButton.addEventListener("click", () => {
+    setMenu(header.dataset.menuOpen !== "true");
+  });
+
+  nav.addEventListener("click", event => {
+    if (event.target.closest("a")) setMenu(false);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && header.dataset.menuOpen === "true") {
+      setMenu(false);
+      menuButton.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760 && header.dataset.menuOpen === "true") setMenu(false);
+  });
+}
+
 const reveals = document.querySelectorAll(".reveal");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
