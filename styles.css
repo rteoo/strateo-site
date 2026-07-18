@@ -309,7 +309,7 @@ blockquote {
   gap: 10px;
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--fw-semibold);
   line-height: 1;
   transition:
     background var(--dur-base) var(--ease-standard),
@@ -343,7 +343,11 @@ blockquote {
 .header-action:hover,
 .button:hover {
   text-decoration: none;
-  transform: translateY(-1px);
+}
+
+.header-action:active,
+.button:active {
+  transform: translateY(1px);
 }
 
 .button-primary {
@@ -357,6 +361,11 @@ blockquote {
   border-color: var(--brand-strong);
 }
 
+.button-primary:active {
+  background: var(--petroleum-800);
+  border-color: var(--petroleum-800);
+}
+
 .button-secondary {
   color: var(--text-brand);
   background: rgba(255, 255, 255, 0.52);
@@ -366,6 +375,11 @@ blockquote {
 .button-secondary:hover,
 .header-action:hover {
   border-color: var(--brand);
+}
+
+.button-secondary:active,
+.header-action:active {
+  background: var(--petroleum-100);
 }
 
 .hero {
@@ -396,21 +410,22 @@ blockquote {
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 10px;
   color: var(--text-brand);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-caps);
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .eyebrow::before {
-  width: 28px;
-  height: 1px;
+  width: 18px;
+  height: 1.5px;
   content: "";
   background: currentColor;
+  opacity: 0.7;
 }
 
 .hero h1,
@@ -420,7 +435,7 @@ blockquote {
   color: var(--text-strong);
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-tight);
   text-wrap: balance;
 }
 
@@ -460,8 +475,13 @@ blockquote {
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.card-topline span {
+  color: var(--petroleum-500);
+  font-size: 13px;
 }
 
 .thesis-section {
@@ -565,7 +585,7 @@ blockquote {
   font-family: var(--font-display);
   font-size: 21px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-snug);
   line-height: 1.18;
 }
 
@@ -595,25 +615,38 @@ blockquote {
 }
 
 .audience-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 264px;
+}
+
+.audience-card::before {
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  width: 36px;
+  height: 2px;
+  content: "";
+  background: var(--petroleum-600);
+  border-radius: 2px;
 }
 
 .audience-card span {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  min-height: 28px;
   margin-top: auto;
-  padding: 0 10px;
+  padding: 5px 10px;
+  /* a11y hold: kit badge uses sage-600 text (~3.3:1 on sage-200); petroleum-700 keeps AA */
   color: var(--petroleum-700);
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  line-height: 1;
-  background: var(--sage-100);
-  border: 1px solid var(--sage-200);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background: var(--sage-200);
   border-radius: var(--radius-pill);
 }
 
@@ -639,7 +672,7 @@ blockquote {
   font-size: 34px;
   font-weight: 500;
   line-height: 1.32;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-tight);
   text-wrap: balance;
 }
 
@@ -649,7 +682,7 @@ blockquote {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -747,6 +780,10 @@ blockquote {
 .footer-inner a {
   color: var(--petroleum-100);
   font-size: var(--text-sm);
+}
+
+.footer-inner a:hover {
+  color: var(--white);
 }
 
 .footer-legal {
