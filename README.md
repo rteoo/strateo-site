@@ -1,6 +1,6 @@
 # Strateo Site
 
-Static, single-page institutional website for **Strateo** (Strateo Serviços Empresariais Ltda.), a Brazilian business-consulting brand. Hand-authored HTML/CSS/JS — no framework, no build step.
+Static institutional website for **Strateo** (Strateo Serviços Empresariais Ltda.), a Brazilian business-consulting brand. Hand-authored HTML/CSS/JS — no framework, no build step.
 
 ## Run locally
 
@@ -14,10 +14,11 @@ Then open http://localhost:4174.
 
 ## Structure
 
-- `index.html` — the page (sections `#topo`, `#metodo`, `#para-quem`, `#resultados`, `#contato`)
+- `index.html` — homepage (services, method, audiences, principles, FAQ and contact)
+- `<slug>/index.html` — focused service, audience, about and contact pages
 - `styles.css` — all styling; design tokens (color/space/type scales) as CSS custom properties at the top
 - `script.js` — scroll header state + reveal-on-scroll animation
-- `assets/` — favicon and wordmark logos
+- `assets/` — canonical wordmarks, favicon, social profile and social card
 
 ## Notes
 

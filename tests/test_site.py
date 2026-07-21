@@ -22,6 +22,7 @@ PUBLIC_PATHS = {
     "": "index.html",
     "consultoria-de-processos-e-gestao": "consultoria-de-processos-e-gestao/index.html",
     "automacao-com-ia": "automacao-com-ia/index.html",
+    "consultoria-regulatoria-mercado-financeiro": "consultoria-regulatoria-mercado-financeiro/index.html",
     "escritorios-de-investimento": "escritorios-de-investimento/index.html",
     "mercado-financeiro-e-capitais": "mercado-financeiro-e-capitais/index.html",
     "industria-agro-construcao": "industria-agro-construcao/index.html",
@@ -162,13 +163,16 @@ class MetadataTests(unittest.TestCase):
         page = index_page(read_page(""))
         self.assertEqual(len(page.ld_json), 1, "homepage needs exactly one JSON-LD block")
         data = json.loads(page.ld_json[0])
-        self.assertEqual(data["@type"], "Organization")
-        self.assertEqual(data["name"], "Strateo")
-        self.assertEqual(data["legalName"], "Strateo Serviços Empresariais Ltda.")
-        self.assertEqual(data["url"], f"{ORIGIN}/")
-        self.assertEqual(data["email"], "contato@strateo.com.br")
-        self.assertTrue(data["logo"].startswith(f"{ORIGIN}/assets/"))
-        address = data["address"]
+        graph = data["@graph"]
+        organization = next(item for item in graph if item["@type"] == "Organization")
+        website = next(item for item in graph if item["@type"] == "WebSite")
+        self.assertEqual(organization["name"], "Strateo")
+        self.assertEqual(organization["legalName"], "Strateo Serviços Empresariais Ltda.")
+        self.assertEqual(organization["url"], f"{ORIGIN}/")
+        self.assertEqual(organization["email"], "contato@strateo.com.br")
+        self.assertTrue(organization["logo"]["url"].startswith(f"{ORIGIN}/assets/"))
+        self.assertEqual(website["publisher"]["@id"], organization["@id"])
+        address = organization["address"]
         self.assertEqual(address["@type"], "PostalAddress")
         self.assertEqual(address["addressLocality"], "Goiânia")
         self.assertEqual(address["addressRegion"], "GO")
@@ -176,10 +180,38 @@ class MetadataTests(unittest.TestCase):
         self.assertIn("postalCode", address)
         # No unverified entity facts.
         for banned in ("telephone", "sameAs", "founder", "taxID", "vatID", "foundingDate"):
-            self.assertNotIn(banned, data, f"JSON-LD must not publish unverified field {banned}")
+            self.assertNotIn(banned, organization,
+                             f"JSON-LD must not publish unverified field {banned}")
 
     def test_social_card_asset_exists(self):
         self.assertTrue((ROOT / "assets" / "strateo-social-card.png").exists())
+
+    def test_current_brand_assets_exist(self):
+        for name in (
+            "strateo-wordmark-v2-petroleum.png",
+            "strateo-favicon-v3.png",
+            "strateo-favicon-v3.ico",
+            "strateo-social-profile-v3.png",
+        ):
+            self.assertTrue((ROOT / "assets" / name).exists(), f"missing brand asset {name}")
+
+    def test_all_pages_use_current_brand_assets(self):
+        for path, html in existing_pages().items():
+            with self.subTest(page=path or "home"):
+                self.assertIn("strateo-favicon-v3.png?v=1", html)
+                self.assertIn("strateo-wordmark-v2-petroleum.png?v=1", html)
+
+    def test_regulatory_service_jsonld(self):
+        html = read_page("consultoria-regulatoria-mercado-financeiro")
+        page = index_page(html)
+        self.assertEqual(len(page.ld_json), 1)
+        graph = json.loads(page.ld_json[0])["@graph"]
+        service = next(item for item in graph if item["@type"] == "Service")
+        breadcrumb = next(item for item in graph if item["@type"] == "BreadcrumbList")
+        self.assertIn("Consultoria regulatória", service["name"])
+        self.assertEqual(service["provider"]["@id"], f"{ORIGIN}/#organization")
+        self.assertEqual(len(breadcrumb["itemListElement"]), 2)
+        self.assertIn("não substitui parecer jurídico", html)
 
 
 class CrawlerTests(unittest.TestCase):
@@ -238,15 +270,26 @@ class HomepageExperienceTests(unittest.TestCase):
     def test_no_known_typo(self):
         self.assertNotIn("com, processo", self.html)
 
-    def test_email_is_visible_and_prefilled(self):
-        self.assertRegex(self.html, r">\s*contato@strateo\.com\.br\s*<",
-                         "email address must be visible as linked text")
+    def test_email_cta_is_prefilled_without_plain_address(self):
+        self.assertNotRegex(self.html, r">\s*contato@strateo\.com\.br\s*<",
+                            "homepage must not repeat the email address as plain linked text")
         self.assertIn("mailto:contato@strateo.com.br?subject=", self.html,
                       "mail CTA must be prefilled")
         self.assertIn("Enviar e-mail", self.html, "mail CTA must be labelled as email")
         self.assertIn("Falar com a Strateo", self.html)
         self.assertNotIn("Agendar conversa", self.html,
                          "CTA must not promise scheduling it cannot deliver")
+
+    def test_browser_feedback_content_and_service_order(self):
+        services = self.html.split('<div class="services-grid">', 1)[1].split('</div>', 1)[0]
+        self.assertLess(services.index("Consultoria de processos e gestão"),
+                        services.index("Consultoria regulatória"))
+        self.assertLess(services.index("Consultoria regulatória"),
+                        services.index("Automação com IA"))
+        self.assertNotIn("CVM", services)
+        self.assertIn("Legado · continuidade", self.html)
+        self.assertNotIn("Gestão do fundador", self.html)
+        self.assertIn("M6.5 3.5h7l4 4v13h-11z", self.html)
 
     def test_answer_first_content(self):
         self.assertIn("O que a Strateo faz", self.html)
@@ -265,6 +308,20 @@ class HomepageExperienceTests(unittest.TestCase):
         hrefs = {a.get("href") for a in self.page.anchors}
         self.assertIn("/consultoria-de-processos-e-gestao/", hrefs)
         self.assertIn("/automacao-com-ia/", hrefs)
+        self.assertIn("/consultoria-regulatoria-mercado-financeiro/", hrefs)
+
+    def test_updated_audience_language(self):
+        self.assertIn("Serviços e Agro", self.html)
+        self.assertIn("empresas do mercado financeiro, de serviços, agro e negócios familiares", self.html)
+        self.assertNotIn("Indústria, agro e construção", self.html)
+
+    def test_formulaic_titles_are_removed(self):
+        for phrase in (
+            "Planejamento que não vira rotina é só intenção bem diagramada",
+            "Consultoria que vira operação, não relatório",
+            "Estratégia que vira sistema, em quatro movimentos",
+        ):
+            self.assertNotIn(phrase, self.html)
 
     def test_no_unsupported_claims(self):
         for phrase in ("nossos clientes", "clientes como", "casos de sucesso"):

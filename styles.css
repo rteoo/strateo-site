@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600&family=Hanken+Grotesk:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap");
 
 :root {
   --petroleum-950: #061b21;
@@ -39,6 +39,7 @@
   --success-600: #2f6b4f;
   --success-500: #3f7d5c;
   --success-100: #dce9e1;
+  --warning-700: #6f4a10;
   --warning-600: #9a6b1e;
   --warning-500: #b5832e;
   --warning-100: #f0e4cc;
@@ -61,9 +62,13 @@
   --text-strong: var(--graphite-900);
   --text-body: var(--graphite-700);
   --text-muted: var(--graphite-500);
-  --text-subtle: var(--graphite-400);
+  --text-subtle: var(--graphite-600);
+  --text-placeholder: var(--graphite-600);
+  --text-disabled: var(--graphite-600);
   --text-on-brand: var(--cream-50);
   --text-on-inverse: var(--cream-100);
+  --text-on-inverse-muted: var(--petroleum-200);
+  --text-on-inverse-subtle: var(--petroleum-300);
   --text-brand: var(--petroleum-600);
   --border-hairline: var(--cream-300);
   --border-default: var(--cream-400);
@@ -587,7 +592,7 @@ blockquote {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -1135,8 +1140,8 @@ blockquote {
 }
 
 .reveal.is-pending {
-  opacity: 1;
-  transform: none;
+  opacity: 0;
+  transform: translateY(6px);
 }
 
 .reveal.is-visible {
@@ -1194,6 +1199,7 @@ blockquote {
 
   .method-grid,
   .audience-grid,
+  .services-grid,
   .page-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
